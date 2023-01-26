@@ -21,4 +21,5 @@ WebAssembly and WASI study
 
  - https://github.com/jedisct1/as-wasi
  - https://github.com/torch2424/wasmboy
+ - https://github.com/PacktPublishing/Hands-On-Game-Development-with-WebAssembly
  
