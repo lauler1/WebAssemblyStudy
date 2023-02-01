@@ -2,7 +2,7 @@
 
 Back to [home](../readme.md)
 
-This is an example of wasm using C language, makefile and Dynamic Linking
+This is an example of wasm using C language, CMake and Dynamic Linking.
 
 
 It needs [Emscripten SDK (emsdk)](../readme.md#Installing-the-C-Emscripten-SDK)
@@ -13,7 +13,7 @@ After emsdk is installed, in order to use it, activate PATH and other environmen
 source ../../../emsdk/emsdk_env.sh
 ```
 
-Create a file `Makefile`:
+Create a file `hello.c`:
 
 ```makefile
 

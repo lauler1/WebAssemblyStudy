@@ -4,13 +4,16 @@ Back to [home](../README.md)
 
 ## Links
 
- - [wasm hello world c](wasm_hello_world_c/readme.md)
- - [wasm hello world c shell minimal](wasm_hello_world_c_shell_minimal/readme.md)
- - [wasm hello world c multiple sources](wasm_hello_world_c_multiple_sources/readme.md)
+ - [book: handsonGameDevelopmentwithWebAssembly](handsonGameDevelopmentwithWebAssembly/readme.md)
+ - [book: the art of webassembly](theartofwebassembly/readme.md)
+ - [wasi_js](wasi_js/readme.md)
+ - [wasm hello world c](./wasm_hello_world_c/readme.md)
+ - [wasm hello world c CMake dll](wasm_hello_world_c_CMake_dll/readme.md)
  - [wasm hello world c makefile](wasm_hello_world_c_makefile/readme.md)
  - [wasm hello world c makefile Dynamic Linking](wasm_hello_world_c_makefile_Dynamic_Linking/readme.md)
-
-
+ - [wasm hello world c multiple sources](wasm_hello_world_c_multiple_sources/readme.md)
+ - [wasm hello world c shell minimal](wasm_hello_world_c_shell_minimal/readme.md)
+ - [wasmtime](wasmtime/readme.md)
 
 ## Installing the C Emscripten SDK (emsdk)
 
@@ -46,7 +49,7 @@ To install:
 sudo apt-get install wabt
 ```
 
-## Running Code Space in Corporate with security restrictions
+## Running Code Space in Corporate with security restrictions# # 
 
 Chromium command line (Windows)
 
