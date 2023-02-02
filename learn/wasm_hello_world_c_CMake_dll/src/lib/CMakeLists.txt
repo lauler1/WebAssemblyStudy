@@ -1,8 +1,23 @@
-#This is the right way, all sources that are not intended to become an
-# executable (e.g. no main()) shall become a library
-# https://matgomes.com/add-library-cmake-create-libraries/
-# https://crascit.com/2016/01/31/enhanced-source-file-handling-with-target_sources/
-target_sources(myLib
-    PRIVATE
-        hellofunc.c
-)
+project(myLib)
+
+if (EMSCRIPTEN)
+	add_library(mylibfile hellofunc.c)
+
+	message("This is EMSCRIPTEN lib")
+	add_compile_options(-s SIDE_MODULE=1)
+	set_target_properties(mylibfile PROPERTIES SUFFIX ".wasm")
+	set_target_properties(mylibfile PROPERTIES PREFIX "")
+else ()
+	add_library(mylibfile SHARED hellofunc.c)
+endif()
+
+target_include_directories(mylibfile PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../../include)
+
+if (EMSCRIPTEN)
+    install(FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/mylibfile.wasm"
+        DESTINATION ${CMAKE_SOURCE_DIR}/bin)
+else()
+	install(TARGETS mylibfile DESTINATION ${CMAKE_SOURCE_DIR}/bin)
+endif()
+
