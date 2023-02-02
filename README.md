@@ -2,6 +2,8 @@
 
 WebAssembly and WASI study
 
+Source of study can be found in the [learn folder](learn/readme.md).
+
 ## Links
 
  - https://github.com/bytecodealliance/wasmtime/blob/main/docs/WASI-documents.md
