@@ -1,3 +1,1 @@
-
-set(SRC ${SRC} hellofunc.c)
-add_executable(${PROJECT_NAME} hellomake.c ${SRC})
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib)

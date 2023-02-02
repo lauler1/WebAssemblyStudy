@@ -13,44 +13,45 @@ After emsdk is installed, in order to use it, activate PATH and other environmen
 source ../../../emsdk/emsdk_env.sh
 ```
 
-Create a file `hello.c`:
+Considering that this example project is in a sub folder calles [PROJ_DIR], the CMake build folder will be ```[PROJ_DIR]/build```
 
-```makefile
+To generate the Makefile Native(not Wasm):
 
-IDIR =./include
-CC=emcc
-CFLAGS=-I$(IDIR)
+```bash
 
-ODIR=obj
-LDIR =./lib
+cd build
+cmake ..
 
+#or cmake .. --fresh
+```
 
-singlehello.js: hellomake.o hellofunc.o
-	$(CC) $^ -o $@
+To generate the Makefile Native(not Wasm):
 
-hellomake.o: src/hellomake.c
-	$(CC) -c $^ -o $@ $(CFLAGS)
+```bash
 
-hellofunc.o: src/hellofunc.c
-	$(CC) -c $< -o $@ $(CFLAGS)
+cd build
+emcmake cmake ..
 
-clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~
+#or emcmake cmake .. --fresh
 
 ```
+
+The ```--fresh``` option is new for CMake 3.24, [see.](https://stackoverflow.com/questions/9680420/looking-for-a-cmake-clean-command-to-clear-up-cmake-output) It creats the project deleting all previous build files.
 
 To compile:
 
 ```bash
 make
+make install
 
-# or
-emmake make
 ```
-To run:
+
+The executable/output files will be in ```[PROJ_DIR]/bin ```
+
+To run WASM from ```[PROJ_DIR]/build```:
 
 ```bash
-node singlehello.js
+node ../bin/WasmHelloWorldCMake.js
 ```
 
 ## Dynamic Linking
