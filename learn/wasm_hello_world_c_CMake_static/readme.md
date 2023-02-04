@@ -1,4 +1,4 @@
-# Welcome to wasm_hello_world_c_makefile_Dynamic_Linking
+# Welcome to wasm_hello_world_c_CMake_static
 
 Back to [home](../readme.md)
 

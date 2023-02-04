@@ -1,8 +1,9 @@
-# Welcome to wasm_hello_world_c_CMake_dll
+# Welcome to wasm_hello_world_c_CMake_dlopen
 
 Back to [home](../readme.md)
 
-This is an example of wasm using C language, CMake and Dynamic Linking.
+This is an example of wasm using C language, CMake and Dynamic Linking which is dynamically loaded using dlopen.
+It is based on [Welcome to wasm_hello_world_c_CMake_dll](../Welcome to wasm_hello_world_c_CMake_dll)
 
 
 It needs [Emscripten SDK (emsdk)](../readme.md#Installing-the-C-Emscripten-SDK)
@@ -80,10 +81,12 @@ The lib project is managed in the ```src/lib``` folder
 
 E.g.:
  ```bash
-emcc src/hellofunc.c -s SIDE_MODULE=1 -Iinclude -o hellofunc.wasm
 
-emcc src/hellomake.c hellofunc.wasm -s MAIN_MODULE=1 -Iinclude -o hellomake.wasm
+emcc ./src/lib/hellofunc.c -s SIDE_MODULE=1 -I./include -o mylibfile.wasm
+emcc ./src/hellomake.c -s MAIN_MODULE=1 -I./include -o WasmHelloWorldCMake.js
 
+#Test
+node WasmHelloWorldCMake.js
  ```
 
 ### Downsides of Using Dynamic Libraries
