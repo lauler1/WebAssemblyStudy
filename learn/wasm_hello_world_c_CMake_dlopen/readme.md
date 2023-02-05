@@ -45,6 +45,7 @@ To compile (both: Native and WASM):
 make
 make install
 
+#or make clean all install 
 ```
 
 The executable/output files will be in ```[PROJ_DIR]/bin ```
@@ -79,15 +80,7 @@ The lib project is managed in the ```src/lib``` folder
 -s MAIN_MODULE=1
  ```
 
-E.g.:
- ```bash
-
-emcc ./src/lib/hellofunc.c -s SIDE_MODULE=1 -I./include -o mylibfile.wasm
-emcc ./src/hellomake.c -s MAIN_MODULE=1 -I./include -o WasmHelloWorldCMake.js
-
-#Test
-node WasmHelloWorldCMake.js
- ```
+Manual building and testing can be seen in the files ```run_dload.sh``` and ```run_test.sh```. The ```run_dload.sh``` is the simplest way, but it is not the way that CMake does. CMakes always separate the building in 2 steps, compiling and linking. The ```run_test.sh``` buils in 2 steps.
 
 ### Downsides of Using Dynamic Libraries
 
