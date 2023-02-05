@@ -50,3 +50,7 @@ sudo apt install libsdl2-ttf-dev
 
 See [how to install sdl on linux](https://learncgames.com/tutorials/how-to-install-sdl-on-linux/).
 
+## Extra
+
+http://kth.diva-portal.org/smash/get/diva2:1664916/FULLTEXT01.pdf
+
