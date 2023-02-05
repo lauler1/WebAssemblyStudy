@@ -1,14 +1,19 @@
 #include "hellomake.h"
 #include <dlfcn.h>
 #include <stdio.h>
-#include <emscripten.h>
+//#include <emscripten.h>
 
 int main() {
 
     void *handle;
     typedef void (*func_t)(void);
-
-    handle = dlopen("mylibfile.wasm", RTLD_NOW);
+#ifdef EMSCRIPTEN
+    puts("EMSCRIPTEN");
+    handle = dlopen("libmylibfile.wasm", RTLD_NOW);
+#else
+    puts("NATIVE");
+    handle = dlopen("libmylibfile.so", RTLD_NOW);
+#endif
 
     if (!handle) {
         printf("failed to open the library\n");
@@ -21,10 +26,10 @@ int main() {
         dlclose(handle);
         return 0;
     }
-	// call a function in another file
-	func();
+    // call a function in another file
+    func();
 
-	printf("End\n");
+    printf("End\n");
   
-	//return(0);
+    return(0);
 }

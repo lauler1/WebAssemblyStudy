@@ -16,7 +16,7 @@ source ../../../../emsdk/emsdk_env.sh
 
 Considering that this example project is in a sub folder calles [PROJ_DIR], the CMake build folder will be ```[PROJ_DIR]/build```
 
-To generate the Makefile Native(not Wasm):
+To generate the Makefile Native(not Wasm, but Linux):
 
 ```bash
 
