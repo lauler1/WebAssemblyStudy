@@ -1,0 +1,30 @@
+{
+  "name": "wasm_hello_world_node_webgl_canvas",
+  "version": "1.0.0",
+  "description": "This is another example of how to use the node canvas to access webgl using a different node library called webgl-raub. This is a study.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webgl-raub",
+    "nodejs",
+    "canvas",
+    "native",
+    "window"
+  ],
+  "author": "Leandro Auler",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.11.0",
+    "gifencoder": "^2.0.1",
+    "gl": "^6.0.2",
+    "glfw-raub": "^5.0.0",
+    "three": "^0.150.1",
+    "webgl": "^0.0.7",
+    "webgl-raub": "^2.4.0"
+  },
+  "devDependencies": {
+    "exports-loader": "^4.0.0"
+  }
+}
