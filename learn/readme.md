@@ -19,6 +19,14 @@ Back to [home](../README.md)
  - [wasm hello world cpp sdl2](wasm_hello_world_cpp_sdl2/readme.md)
  - [wasmtime](wasmtime/readme.md)
 
+ - [wasm hello world cpp egl](wasm_hello_world_cpp_egl/readme.md)
+ - [wasm hello world cpp svgpp](wasm_hello_world_cpp_svgpp)
+ - [wasm hello world node canvas](wasm_hello_world_node_canvas/readme.md)
+ - [wasm_hello_world_node_webgl_canvas](wasm_hello_world_node_webgl_canvas/readme.md)
+ - [wasm_hello_world_cpp_webgl](wasm_hello_world_cpp_webgl/readme.md)
+
+
+
 ## Installing the C Emscripten SDK (emsdk)
 
  - [Instructions](https://emscripten.org/docs/getting_started/downloads.html)
@@ -43,6 +51,9 @@ git pull
 
 # Activate PATH and other environment variables in the current terminal
 source ./emsdk_env.sh
+
+#To see what are the ports available in emscripten
+emcc --show-ports
 ```
 
 ## Wasm wasm-objdump
