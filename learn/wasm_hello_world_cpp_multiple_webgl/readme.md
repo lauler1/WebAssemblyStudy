@@ -7,8 +7,8 @@ This is an extension of "../wasm_hello_world_cpp_multiple_webgl" in order to han
 There are four examples in this directory.
 
 * **index.html** and **index.js** run wasm with webgl in a browser.
-* **wasmwebgl.js** runs was with webgl in a native window using nodejs plus webgl-raub and glfw-raub
-* **nodewebgl.js** runs a simple example of webgl in a native window using nodejs plus webgl-raub and glfw-raub
+* **nodewebgl.js** runs a simple example of webgl in a native windows using nodejs plus webgl-raub and glfw-raub
+* **wasmwebgl.js** runs wasm with webgl in a native windows using nodejs plus webgl-raub and glfw-raub <-- Not working
 * **wasmglfw.html** and **wasmglfw.js** run wasm with glfw in a browser. But it is limited to one single windows
 
 The browser version is based in this [blog](https://blog.feather.systems/WebGL.html), also found in [Github](https://github.com/AO-Design-Inc/webGL-with-emscripten).
