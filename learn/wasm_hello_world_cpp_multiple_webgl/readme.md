@@ -64,19 +64,50 @@ Create a copy of nodewebgl.js and call it wasmwebgl.js
 It is needed to add this code in the begining of the wasmwebgl.js file.
 
 ```javascript
+'use strict';
+
 const webgl = require('webgl-raub');
 const { Document } = require('glfw-raub');
 Document.setWebgl(webgl);
-const document = new Document();
-const requestAnimationFrame = document.requestAnimationFrame;
-const mycanvas = document.createElement('canvas');
-const myctx = mycanvas.getContext('webgl');
 
+class MyDocument extends Document  {
+	myctx = 0;
+	constructor(opts = {}) {
+		super(opts);
+	}		
+	getContext(kind, attr){
+		//console.log("MyDocument::getContext called");
+		if(this.myctx == 0){
+			//console.log("  first time");
+			this.myctx = super.getContext('webgl');
+		}
+		//console.log("MyDocument::myctx", this.myctx);
+		return this.myctx;//super.getContext('webgl');
+	}
+}
+
+const document1 = new MyDocument();
+//document1.makeCurrent();
+const mycanvas1 = document1.createElement('canvas');
+mycanvas1.getContextSafariWebGL2Fixed = 1; //just to force not use SafariWebGL2Fixed
+
+const document2 = new MyDocument();
+document2.makeCurrent();
+const mycanvas2 = document2.createElement('canvas');
+mycanvas2.getContextSafariWebGL2Fixed = 1; //just to force not use SafariWebGL2Fixed
+
+//document1.makeCurrent();
+const selector = [];
+selector["#canvas1"] = mycanvas1;
+selector["#canvas2"] = mycanvas2;
+const document={
+	querySelector: function (target) {
+		//console.log("querySelector selector[target] = ", selector[target]);
+		return selector[target];
+	}
+}
 ```
 
-And replace in the code ```var canvas = findCanvasEventTarget(target);``` by ```var canvas = mycanvas;```
-
-And ```var ctx = (canvas.getContext("webgl", webGLContextAttributes)``` by ```var ctx = myctx;```.
 
 Execute it:
 
