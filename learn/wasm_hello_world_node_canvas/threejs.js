@@ -38,7 +38,7 @@ function update() {
     encoder.addFrame(canvas.__ctx__);
     console.log(`add frame ${idx}`);
   }
-  fs.writeFileSync('out.svg', canvas.toBuffer())
+  //fs.writeFileSync('out.svg', canvas.toBuffer())
   idx++;
   if(idx < 500) {
     setTimeout(update, 16);

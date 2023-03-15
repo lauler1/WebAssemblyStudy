@@ -2,6 +2,8 @@
 
 const webgl = require('webgl-raub');
 
+//const { createCanvas, loadImage } = require('canvas');
+//const canvas = createCanvas(200, 200);
 const { Document } = require('glfw-raub');
 
 
@@ -17,6 +19,7 @@ let gl;
 const initContext = canvas => {
 	try {
 		gl = canvas.getContext('webgl');
+		//gl = canvas.getContext('2d')
 		
 	} catch (e) {
 		console.error('Could not initialise WebGL, sorry :-(');

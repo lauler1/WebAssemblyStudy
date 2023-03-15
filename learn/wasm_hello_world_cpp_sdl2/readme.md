@@ -25,10 +25,12 @@ clang example.cpp -o example -lSDL2
 ## WASM
 
 To test the example, it is necessary to run a server and open it in a browser, e.g.:
+
 ```bash
 emrun example.html
 ```
 
+> **_NOTE:_**  Emscripten currently (2023) only provides SDL working in the browser, not WASI.
 
 ## Native
 
@@ -48,9 +50,18 @@ sudo apt install libsdl2-mixer-dev
 sudo apt install libsdl2-ttf-dev
 ```
 
+
+
 See [how to install sdl on linux](https://learncgames.com/tutorials/how-to-install-sdl-on-linux/).
 
 ## Extra
 
 http://kth.diva-portal.org/smash/get/diva2:1664916/FULLTEXT01.pdf
+
+
+For SVG rendering, take a look:
+https://github.com/svgpp/svgpp
+https://github.com/kiba/SDL_svg
+
+https://github.com/boostorg/boost
 
