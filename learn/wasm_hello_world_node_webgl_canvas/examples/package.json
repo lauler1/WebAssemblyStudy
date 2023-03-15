@@ -1,0 +1,13 @@
+{
+	"name": "example",
+	"version": "0.0.0",
+	"private": true,
+	"main": "lesson05.js",
+	"scripts": {
+		"postinstall": "cd .. && npm ci"
+	},
+	"dependencies": {
+		"glfw-raub": "^4.7.0",
+		"image-raub": "^3.3.0"
+	}
+}
