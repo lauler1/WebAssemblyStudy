@@ -1,12 +1,11 @@
-# Welcome to wasm_hello_world_c_dlopen
+# Welcome to wasm_hello_world_cpp_webgl
 
 Back to [home](../readme.md)
-
 
 There are three examples in this directory.
 
 * **index.html** and **index.js** run wasm with webgl in a browser.
-* **wasmwebgl.js** runs was with webgl in a native window using nodejs plus webgl-raub and glfw-raub
+* **wasmwebgl.js** runs wasm with webgl in a native window using nodejs plus webgl-raub and glfw-raub
 * **nodewebgl.js** runs a simple example of webgl in a native window using nodejs plus webgl-raub and glfw-raub
 
 The browser version is based in this [blog](https://blog.feather.systems/WebGL.html), also found in [Github](https://github.com/AO-Design-Inc/webGL-with-emscripten).
