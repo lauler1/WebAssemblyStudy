@@ -2,7 +2,8 @@
 
 WebAssembly and WASI study
 
-Source of study can be found in the [learn folder](learn/readme.md).
+Source of study of WebAssembly can be found in the [learn folder](learn/readme.md).
+Source of study of WASI can be found in the [wasi folder](wasi/readme.md).
 
 ## Links
 
