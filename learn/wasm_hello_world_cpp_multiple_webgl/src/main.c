@@ -10,9 +10,11 @@ EMSCRIPTEN_WEBGL_CONTEXT_HANDLE ctx2;
 
 void handle_events() {
 	emscripten_webgl_make_context_current(ctx1);
-  	glClear(GL_COLOR_BUFFER_BIT);
+	glClearColor(100.0, 0.0, 0.0, 1.0);
+  	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	emscripten_webgl_make_context_current(ctx2);
-  	glClear(GL_COLOR_BUFFER_BIT);
+	glClearColor(0.0, 0.0, 100.0, 1.0);
+  	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     //return 1;
 }
 
@@ -25,11 +27,11 @@ int main(){
 	ctx2 = emscripten_webgl_create_context("#canvas2", &attr);
 
 	emscripten_webgl_make_context_current(ctx1);
-	glClearColor(100.0, 155.0, 0.0, 1.0);
+	glClearColor(100.0, 0.0, 0.0, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	emscripten_webgl_make_context_current(ctx2);
-	glClearColor(100.0, 0.0, 100.0, 1.0);
+	glClearColor(0.0, 0.0, 100.0, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 
 
